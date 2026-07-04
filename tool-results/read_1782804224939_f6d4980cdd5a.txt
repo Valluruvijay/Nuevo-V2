@@ -1,0 +1,667 @@
+     1→     1→<!DOCTYPE html>
+     2→     2→<html lang="en" class="scroll-smooth">
+     3→     3→<head>
+     4→     4→    <meta charset="UTF-8">
+     5→     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→     6→    <title>Nueva Solutions | Strategic IT Staffing & Talent Partners</title>
+     7→     7→    <meta name="description" content="A Women & Minority-owned IT staffing firm providing strategic talent solutions, staff augmentation, and consulting services since 2008.">
+     8→     8→    
+     9→     9→    <script src="https://cdn.tailwindcss.com"></script>
+    10→    10→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    11→    11→    <script src="https://unpkg.com/lucide@latest"></script>
+    12→    12→
+    13→    13→    <script>
+    14→    14→        tailwind.config = {
+    15→    15→            theme: {
+    16→    16→                extend: {
+    17→    17→                    colors: {
+    18→    18→                        brand: { 50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#0f172a' },
+    19→    19→                        accent: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+    20→    20→                    },
+    21→    21→                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+    22→    22→                }
+    23→    23→            }
+    24→    24→        }
+    25→    25→    </script>
+    26→    26→    <style>
+    27→    27→        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    28→    28→        html { scroll-behavior: smooth; }
+    29→    29→        [x-cloak] { display: none !important; }
+    30→    30→    </style>
+    31→    31→</head>
+    32→    32→<body class="font-sans text-gray-800 bg-white antialiased" x-data="{ mobileMenu: false }">
+    33→    33→
+    34→    34→    <!-- ========================================== -->
+    35→    35→    <!-- HEADER / NAVIGATION                        -->
+    36→    36→    <!-- ========================================== -->
+    37→    37→    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+    38→    38→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    39→    39→            <div class="flex items-center justify-between h-16 lg:h-20">
+    40→    40→                <a href="#" class="flex items-center space-x-2 flex-shrink-0">
+    41→    41→                    <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
+    42→    42→                        <span class="text-white font-bold text-lg">N</span>
+    43→    43→                    </div>
+    44→    44→                    <span class="text-lg sm:text-xl font-bold text-brand-900">Nueva<span class="text-brand-600">Solutions</span></span>
+    45→    45→                </a>
+    46→    46→
+    47→    47→                <nav class="hidden lg:flex items-center space-x-8">
+    48→    48→                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition">About Us</a>
+    49→    49→                    <div class="relative group">
+    50→    50→                        <button class="text-sm font-medium text-gray-600 hover:text-brand-600 transition flex items-center gap-1">
+    51→    51→                            Services <i data-lucide="chevron-down" class="w-4 h-4"></i>
+    52→    52→                        </button>
+    53→    53→                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+    54→    54→                            <div class="w-[520px] bg-white rounded-xl shadow-2xl border border-gray-100 p-6 grid grid-cols-2 gap-4">
+    55→    55→                                <a href="#services" class="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-50 transition">
+    56→    56→                                    <div class="p-2 bg-blue-50 rounded-lg text-brand-600 mt-0.5"><i data-lucide="users" class="w-5 h-5"></i></div>
+    57→    57→                                    <div><h4 class="font-semibold text-gray-900 text-sm">IT Staffing</h4><p class="text-xs text-gray-500 mt-1">Contract, C2H, Direct Hire</p></div>
+    58→    58→                                </a>
+    59→    59→                                <a href="#services" class="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-50 transition">
+    60→    60→                                    <div class="p-2 bg-blue-50 rounded-lg text-brand-600 mt-0.5"><i data-lucide="bar-chart-3" class="w-5 h-5"></i></div>
+    61→    61→                                    <div><h4 class="font-semibold text-gray-900 text-sm">Managed Services</h4><p class="text-xs text-gray-500 mt-1">End-to-end IT delivery</p></div>
+    62→    62→                                </a>
+    63→    63→                                <a href="#services" class="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-50 transition">
+    64→    64→                                    <div class="p-2 bg-blue-50 rounded-lg text-brand-600 mt-0.5"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+    65→    65→                                    <div><h4 class="font-semibold text-gray-900 text-sm">Cyber Security</h4><p class="text-xs text-gray-500 mt-1">Risk & threat mitigation</p></div>
+    66→    66→                                </a>
+    67→    67→                                <a href="#services" class="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-50 transition">
+    68→    68→                                    <div class="p-2 bg-blue-50 rounded-lg text-brand-600 mt-0.5"><i data-lucide="database" class="w-5 h-5"></i></div>
+    69→    69→                                    <div><h4 class="font-semibold text-gray-900 text-sm">Data & Cloud</h4><p class="text-xs text-gray-500 mt-1">Analytics & architecture</p></div>
+    70→    70→                                </a>
+    71→    71→                            </div>
+    72→    72→                        </div>
+    73→    73→                    </div>
+    74→    74→                    <a href="#industries" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition">Industries</a>
+    75→    75→                    <a href="#careers" class="text-sm font-medium text-gray-600 hover:text-brand-600 transition">Careers</a>
+    76→    76→                    <a href="#contact" class="ml-4 inline-flex items-center px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-all hover:shadow-md">
+    77→    77→                        Request Talent
+    78→    78→                    </a>
+    79→    79→                </nav>
+    80→    80→
+    81→    81→                <button @click="mobileMenu = !mobileMenu" class="lg:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 transition">
+    82→    82→                    <i data-lucide="menu" class="w-6 h-6" x-show="!mobileMenu"></i>
+    83→    83→                    <i data-lucide="x" class="w-6 h-6" x-show="mobileMenu" x-cloak></i>
+    84→    84→                </button>
+    85→    85→            </div>
+    86→    86→        </div>
+    87→    87→
+    88→    88→        <!-- Mobile Menu Overlay -->
+    89→    89→        <div x-show="mobileMenu" x-cloak 
+    90→    90→             x-transition:enter="transition ease-out duration-200"
+    91→    91→             x-transition:enter-start="opacity-0 -translate-y-2"
+    92→    92→             x-transition:enter-end="opacity-100 translate-y-0"
+    93→    93→             x-transition:leave="transition ease-in duration-150"
+    94→    94→             x-transition:leave-start="opacity-100 translate-y-0"
+    95→    95→             x-transition:leave-end="opacity-0 -translate-y-2"
+    96→    96→             @click.away="mobileMenu = false" 
+    97→    97→             class="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-xl">
+    98→    98→            <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col space-y-4">
+    99→    99→                <a href="#about" @click="mobileMenu = false" class="px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition">About Us</a>
+   100→   100→                <a href="#services" @click="mobileMenu = false" class="px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition">Services</a>
+   101→   101→                <a href="#industries" @click="mobileMenu = false" class="px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition">Industries</a>
+   102→   102→                <a href="#careers" @click="mobileMenu = false" class="px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition">Careers</a>
+   103→   103→                <a href="#contact" @click="mobileMenu = false" class="mx-4 text-center px-5 py-3.5 bg-brand-600 text-white font-semibold rounded-lg shadow-md">Request Talent</a>
+   104→   104→            </div>
+   105→   105→        </div>
+   106→   106→    </header>
+   107→   107→
+   108→   108→    <!-- ========================================== -->
+   109→   109→    <!-- HERO SECTION                               -->
+   110→   110→    <!-- ========================================== -->
+   111→   111→    <section class="pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+   112→   112→        <div class="absolute top-20 right-0 w-1/3 h-1/3 bg-brand-500/5 rounded-full blur-3xl"></div>
+   113→   113→        <div class="absolute bottom-0 left-0 w-1/4 h-1/4 bg-accent-500/10 rounded-full blur-3xl"></div>
+   114→   114→        
+   115→   115→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+   116→   116→            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+   117→   117→                <div>
+   118→   118→                    <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-100 text-accent-600 rounded-full text-xs sm:text-sm font-semibold mb-6">
+   119→   119→                        <i data-lucide="award" class="w-4 h-4"></i>
+   120→   120→                        Women & Minority Owned (WBE/MBE)
+   121→   121→                    </div>
+   122→   122→                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-900 leading-tight tracking-tight">
+   123→   123→                        America's Trusted Partner for 
+   124→   124→                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-400"> IT Talent </span>
+   125→   125→                        & Solutions
+   126→   126→                    </h1>
+   127→   127→                    <p class="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
+   128→   128→                        We don't just fill positions. We build high-performing IT teams that drive business forward. Strategic staffing, consulting, and workforce solutions trusted by Fortune 500s since 2008.
+   129→   129→                    </p>
+   130→   130→                    <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4">
+   131→   131→                        <a href="#contact" class="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl hover:-translate-y-0.5 text-sm sm:text-base">
+   132→   132→                            Find Your Talent <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+   133→   133→                        </a>
+   134→   134→                        <a href="#services" class="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white hover:bg-gray-50 text-brand-900 font-bold rounded-xl border border-gray-200 transition-all text-sm sm:text-base">
+   135→   135→                            Explore Solutions
+   136→   136→                        </a>
+   137→   137→                    </div>
+   138→   138→                </div>
+   139→   139→                
+   140→   140→                <div class="hidden lg:flex justify-center">
+   141→   141→                    <div class="relative w-full max-w-lg">
+   142→   142→                        <div class="absolute inset-0 bg-gradient-to-r from-brand-600 to-blue-400 rounded-2xl transform rotate-3"></div>
+   143→   143→                        <div class="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+   144→   144→                            <div class="flex items-center gap-3 mb-6">
+   145→   145→                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+   146→   146→                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+   147→   147→                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+   148→   148→                            </div>
+   149→   149→                            <div class="space-y-4">
+   150→   150→                                <div class="h-4 bg-gray-100 rounded w-3/4"></div>
+   151→   151→                                <div class="h-4 bg-gray-100 rounded w-1/2"></div>
+   152→   152→                                <div class="mt-6 grid grid-cols-3 gap-4">
+   153→   153→                                    <div class="h-20 bg-blue-50 rounded-lg border border-blue-100 flex items-center justify-center text-brand-600 font-bold">98%</div>
+   154→   154→                                    <div class="h-20 bg-green-50 rounded-lg border border-green-100 flex items-center justify-center text-green-600 font-bold">24h</div>
+   155→   155→                                    <div class="h-20 bg-purple-50 rounded-lg border border-purple-100 flex items-center justify-center text-purple-600 font-bold">500+</div>
+   156→   156→                                </div>
+   157→   157→                                <div class="h-4 bg-gray-100 rounded w-full mt-4"></div>
+   158→   158→                                <div class="h-4 bg-gray-100 rounded w-5/6"></div>
+   159→   159→                            </div>
+   160→   160→                        </div>
+   161→   161→                    </div>
+   162→   162→                </div>
+   163→   163→            </div>
+   164→   164→        </div>
+   165→   165→    </section>
+   166→   166→
+   167→   167→    <!-- ========================================== -->
+   168→   168→    <!-- STATS BAR                                  -->
+   169→   169→    <!-- ========================================== -->
+   170→   170→    <section class="bg-brand-900 py-8 sm:py-10 relative overflow-hidden">
+   171→   171→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+   172→   172→            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center" x-data="{
+   173→   173→                countUp(el, target, suffix = '') {
+   174→   174→                    let current = 0;
+   175→   175→                    const increment = target / 40;
+   176→   176→                    const timer = setInterval(() => {
+   177→   177→                        current += increment;
+   178→   178→                        if (current >= target) { el.textContent = target + suffix; clearInterval(timer); } 
+   179→   179→                        else { el.textContent = Math.floor(current) + suffix; }
+   180→   180→                    }, 30);
+   181→   181→                }
+   182→   182→            }" x-init="setTimeout(() => { countUp($refs.years, 12, '+'); countUp($refs.placements, 500, '+'); countUp($refs.retention, 98, '%'); countUp($refs.clients, 150, '+'); }, 500)">
+   183→   183→                <div>
+   184→   184→                    <div class="text-3xl sm:text-4xl font-extrabold text-white" x-ref="years">0+</div>
+   185→   185→                    <div class="mt-1 text-xs sm:text-sm text-blue-200 uppercase tracking-wider font-medium">Years Experience</div>
+   186→   186→                </div>
+   187→   187→                <div>
+   188→   188→                    <div class="text-3xl sm:text-4xl font-extrabold text-white" x-ref="placements">0+</div>
+   189→   189→                    <div class="mt-1 text-xs sm:text-sm text-blue-200 uppercase tracking-wider font-medium">Placements</div>
+   190→   190→                </div>
+   191→   191→                <div>
+   192→   192→                    <div class="text-3xl sm:text-4xl font-extrabold text-white" x-ref="retention">0%</div>
+   193→   193→                    <div class="mt-1 text-xs sm:text-sm text-blue-200 uppercase tracking-wider font-medium">Retention Rate</div>
+   194→   194→                </div>
+   195→   195→                <div>
+   196→   196→                    <div class="text-3xl sm:text-4xl font-extrabold text-white" x-ref="clients">0+</div>
+   197→   197→                    <div class="mt-1 text-xs sm:text-sm text-blue-200 uppercase tracking-wider font-medium">Enterprise Clients</div>
+   198→   198→                </div>
+   199→   199→            </div>
+   200→   200→        </div>
+   201→   201→    </section>
+   202→   202→
+   203→   203→    <!-- ========================================== -->
+   204→   204→    <!-- TRUSTED BY SECTION                         -->
+   205→   205→    <!-- ========================================== -->
+   206→   206→    <section class="py-10 sm:py-16 border-b border-gray-100 bg-white">
+   207→   207→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   208→   208→            <p class="text-center text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6 sm:mb-8">Trusted by industry leaders across the US</p>
+   209→   209→            <div class="flex flex-wrap justify-center items-center gap-x-8 sm:gap-x-12 gap-y-4 sm:gap-y-6 opacity-40">
+   210→   210→                <div class="text-2xl sm:text-3xl font-black text-gray-800 tracking-tighter">CLIENT<span class="text-gray-400">.</span></div>
+   211→   211→                <div class="text-2xl sm:text-3xl font-black text-gray-800 tracking-tighter">CORP<span class="text-gray-400">.</span></div>
+   212→   212→                <div class="text-2xl sm:text-3xl font-black text-gray-800 tracking-tighter">TECH<span class="text-gray-400">CO</span></div>
+   213→   213→                <div class="text-2xl sm:text-3xl font-black text-gray-800 tracking-tighter">DATA<span class="text-gray-400">SYS</span></div>
+   214→   214→                <div class="text-2xl sm:text-3xl font-black text-gray-800 tracking-tighter">NET<span class="text-gray-400">OPS</span></div>
+   215→   215→            </div>
+   216→   216→        </div>
+   217→   217→    </section>
+   218→   218→
+   219→   219→    <!-- ========================================== -->
+   220→   220→    <!-- DETAILED SERVICES SECTION (Apollo Style)   -->
+   221→   221→    <!-- ========================================== -->
+   222→   222→    <section id="services" class="py-16 sm:py-20 lg:py-28 bg-gray-50">
+   223→   223→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   224→   224→            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+   225→   225→                <span class="text-brand-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">What We Do</span>
+   226→   226→                <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-900 tracking-tight">
+   227→   227→                    Solutions Designed for Modern IT Workforces
+   228→   228→                </h2>
+   229→   229→                <p class="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+   230→   230→                    Integrated staffing and consulting solutions designed to improve operational visibility, talent efficiency, and business scalability across diverse industries.
+   231→   231→                </p>
+   232→   232→            </div>
+   233→   233→
+   234→   234→            <div class="space-y-6 lg:space-y-8">
+   235→   235→                <!-- Detailed Card 1 -->
+   236→   236→                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden grid md:grid-cols-2 gap-0">
+   237→   237→                    <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+   238→   238→                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-brand-600 mb-5">
+   239→   239→                            <i data-lucide="user-check" class="w-6 h-6"></i>
+   240→   240→                        </div>
+   241→   241→                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">IT Staffing & Recruiting Solutions</h3>
+   242→   242→                        <p class="text-gray-500 leading-relaxed mb-6">
+   243→   243→                            IT Staffing is at the core of our business. We provide nationwide direct hire, contract, and contract-to-hire staffing services. We maintain a steady pool of talented and reliable IT workforce by means of regular outreach programs.
+   244→   244→                        </p>
+   245→   245→                        <ul class="space-y-3 mb-8">
+   246→   246→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> <span><strong class="text-gray-900">Contract & C2H:</strong> Scalable workforce for project-based needs.</span></li>
+   247→   247→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> <span><strong class="text-gray-900">Direct Hire:</strong> Executive IT recruiting for permanent positions.</span></li>
+   248→   248→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> <span><strong class="text-gray-900">Rapid Sourcing:</strong> Qualified candidates submitted within 24-48 hours.</span></li>
+   249→   249→                        </ul>
+   250→   250→                        <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 group">
+   251→   251→                            Explore Staffing Solutions <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+   252→   252→                        </a>
+   253→   253→                    </div>
+   254→   254→                    <div class="hidden md:block bg-gray-100 relative min-h-[300px]">
+   255→   255→                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="IT Staffing" class="absolute inset-0 w-full h-full object-cover">
+   256→   256→                    </div>
+   257→   257→                </div>
+   258→   258→
+   259→   259→                <!-- Detailed Card 2 -->
+   260→   260→                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden grid md:grid-cols-2 gap-0">
+   261→   261→                    <div class="hidden md:block bg-gray-100 relative min-h-[300px] order-1 md:order-none">
+   262→   262→                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Managed Services" class="absolute inset-0 w-full h-full object-cover">
+   263→   263→                    </div>
+   264→   264→                    <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+   265→   265→                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-brand-600 mb-5">
+   266→   266→                            <i data-lucide="settings" class="w-6 h-6"></i>
+   267→   267→                        </div>
+   268→   268→                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Managed IT Services & Consulting</h3>
+   269→   269→                        <p class="text-gray-500 leading-relaxed mb-6">
+   270→   270→                            Success is ensured during every engagement. We structure each relationship to meet our client's unique current business goals using a proven methodology and subject matter experts.
+   271→   271→                        </p>
+   272→   272→                        <ul class="space-y-3 mb-8">
+   273→   273→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> <span><strong class="text-gray-900">Strategic Planning:</strong> Roadmaps aligned with your tech goals.</span></li>
+   274→   274→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> <span><strong class="text-gray-900">Process Engineering:</strong> BPE to streamline operations.</span></li>
+   275→   275→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> <span><strong class="text-gray-900">System Architecture:</strong> Designing resilient IT infrastructures.</span></li>
+   276→   276→                        </ul>
+   277→   277→                        <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 group">
+   278→   278→                            Explore Consulting <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+   279→   279→                        </a>
+   280→   280→                    </div>
+   281→   281→                </div>
+   282→   282→
+   283→   283→                <!-- Detailed Card 3 -->
+   284→   284→                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden grid md:grid-cols-2 gap-0">
+   285→   285→                    <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+   286→   286→                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-brand-600 mb-5">
+   287→   287→                            <i data-lucide="layers" class="w-6 h-6"></i>
+   288→   288→                        </div>
+   289→   289→                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Specialized Technology Domains</h3>
+   290→   290→                        <p class="text-gray-500 leading-relaxed mb-6">
+   291→   291→                            We maintain dedicated recruiting teams for high-demand, niche technology verticals, ensuring you get experts, not just generalists.
+   292→   292→                        </p>
+   293→   293→                        <div class="grid grid-cols-2 gap-3 mb-8">
+   294→   294→                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm font-medium text-gray-700 text-center">Cyber / IT Security</div>
+   295→   295→                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm font-medium text-gray-700 text-center">Data Management</div>
+   296→   296→                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm font-medium text-gray-700 text-center">SAP & Salesforce</div>
+   297→   297→                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm font-medium text-gray-700 text-center">App Software</div>
+   298→   298→                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm font-medium text-gray-700 text-center">IT Infrastructure</div>
+   299→   299→                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm font-medium text-gray-700 text-center">Cloud & DevOps</div>
+   300→   300→                        </div>
+   301→   301→                        <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 group">
+   302→   302→                            View All Domains <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+   303→   303→                        </a>
+   304→   304→                    </div>
+   305→   305→                    <div class="hidden md:block bg-gray-100 relative min-h-[300px]">
+   306→   306→                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tech Domains" class="absolute inset-0 w-full h-full object-cover">
+   307→   307→                    </div>
+   308→   308→                </div>
+   309→   309→            </div>
+   310→   310→        </div>
+   311→   311→    </section>
+   312→   312→
+   313→   313→    <!-- ========================================== -->
+   314→   314→    <!-- INDUSTRIES / SECTORS SECTION               -->
+   315→   315→    <!-- ========================================== -->
+   316→   316→    <section id="industries" class="py-16 sm:py-20 lg:py-28 bg-white" x-data="{ activeTab: 'finance' }">
+   317→   317→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   318→   318→            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+   319→   319→                <span class="text-brand-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">Specializations</span>
+   320→   320→                <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-900 tracking-tight">
+   321→   321→                    Talent Aligned with Industry Dynamics
+   322→   322→                </h2>
+   323→   323→                <p class="mt-4 text-base sm:text-lg text-gray-500 leading-relaxed">
+   324→   324→                    Industry-specific IT solutions designed to address sector-specific operational requirements, compliance needs, and growth objectives.
+   325→   325→                </p>
+   326→   326→            </div>
+   327→   327→
+   328→   328→            <!-- Responsive Tab Buttons -->
+   329→   329→            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12">
+   330→   330→                <button @click="activeTab = 'finance'" :class="activeTab === 'finance' ? 'bg-brand-600 text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all">Finance & Banking</button>
+   331→   331→                <button @click="activeTab = 'health'" :class="activeTab === 'health' ? 'bg-brand-600 text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all">Healthcare</button>
+   332→   332→                <button @click="activeTab = 'retail'" :class="activeTab === 'retail' ? 'bg-brand-600 text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all">Retail & E-Comm</button>
+   333→   333→                <button @click="activeTab = 'gov'" :class="activeTab === 'gov' ? 'bg-brand-600 text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'" class="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all">Government</button>
+   334→   334→            </div>
+   335→   335→
+   336→   336→            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+   337→   337→                <!-- Text Content -->
+   338→   338→                <div>
+   339→   339→                    <div x-show="activeTab === 'finance'" class="space-y-5 sm:space-y-6">
+   340→   340→                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Financial IT & FinTech Staffing</h3>
+   341→   341→                        <p class="text-sm sm:text-base text-gray-500 leading-relaxed">We understand the rigorous compliance, security, and scalability requirements of the financial sector. We provide talent for core banking transformations, quantitative development, and FinTech innovation.</p>
+   342→   342→                        <ul class="space-y-3">
+   343→   343→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> Strict regulatory compliance experts (SOX, GDPR)</li>
+   344→   344→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> Blockchain & Quantum computing talent</li>
+   345→   345→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> High-frequency trading infrastructure architects</li>
+   346→   346→                        </ul>
+   347→   347→                        <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 group">Explore Financial Solutions <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
+   348→   348→                    </div>
+   349→   349→                    
+   350→   350→                    <div x-show="activeTab === 'health'" class="space-y-5 sm:space-y-6">
+   351→   351→                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Healthcare IT & Life Sciences</h3>
+   352→   352→                        <p class="text-sm sm:text-base text-gray-500 leading-relaxed">Secure, HIPAA-compliant IT staffing for Electronic Health Records (EHR), telehealth platforms, clinical data management, and healthcare SaaS products.</p>
+   353→   353→                        <ul class="space-y-3">
+   354→   354→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> Epic, Cerner, & Meditech certified specialists</li>
+   355→   355→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> HL7 & FHIR interoperability engineers</li>
+   356→   356→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> Bioinformatics & clinical data analysts</li>
+   357→   357→                        </ul>
+   358→   358→                        <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 group">Explore Healthcare Solutions <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
+   359→   359→                    </div>
+   360→   360→
+   361→   361→                    <div x-show="activeTab === 'retail'" class="space-y-5 sm:space-y-6">
+   362→   362→                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Retail, E-Commerce & Supply Chain</h3>
+   363→   363→                        <p class="text-sm sm:text-base text-gray-500 leading-relaxed">Agile fulfillment and distribution ecosystems built for omnichannel retail. We staff the engineers who power fast-moving consumer demand and digital storefronts.</p>
+   364→   364→                        <ul class="space-y-3">
+   365→   365→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> Salesforce Commerce Cloud talent</li>
+   366→   366→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> Supply chain & logistics software devs</li>
+   367→   367→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> Data-driven personalization engineers</li>
+   368→   368→                        </ul>
+   369→   369→                        <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 group">Explore Retail Solutions <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
+   370→   370→                    </div>
+   371→   371→
+   372→   372→                    <div x-show="activeTab === 'gov'" class="space-y-5 sm:space-y-6">
+   373→   373→                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Government & Public Sector</h3>
+   374→   374→                        <p class="text-sm sm:text-base text-gray-500 leading-relaxed">Navigating the complexities of government contracts. We provide cleared and un-cleared IT professionals for federal, state, and local modernization initiatives.</p>
+   375→   375→                        <ul class="space-y-3">
+   376→   376→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> FedRAMP & FISMA compliance experts</li>
+   377→   377→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> Legacy system modernization teams</li>
+   378→   378→                            <li class="flex items-start gap-3 text-sm text-gray-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"></i> Fulfilling supplier diversity spend goals (WBE/MBE)</li>
+   379→   379→                        </ul>
+   380→   380→                        <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 group">Explore Gov Solutions <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i></a>
+   381→   381→                    </div>
+   382→   382→                </div>
+   383→   383→                
+   384→   384→                <!-- Image Placeholder -->
+   385→   385→                <div class="bg-gray-100 rounded-2xl h-64 sm:h-80 lg:h-96 flex items-center justify-center border border-gray-200 overflow-hidden">
+   386→   386→                    <img x-show="activeTab === 'finance'" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Finance" class="w-full h-full object-cover">
+   387→   387→                    <img x-show="activeTab === 'health'" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Health" class="w-full h-full object-cover">
+   388→   388→                    <img x-show="activeTab === 'retail'" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Retail" class="w-full h-full object-cover">
+   389→   389→                    <img x-show="activeTab === 'gov'" src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gov" class="w-full h-full object-cover">
+   390→   390→                </div>
+   391→   391→            </div>
+   392→   392→        </div>
+   393→   393→    </section>
+   394→   394→
+   395→   395→    <!-- ========================================== -->
+   396→   396→    <!-- LONG FORM CAPABILITIES SECTION (Apollo)    -->
+   397→   397→    <!-- ========================================== -->
+   398→   398→    <section id="about" class="py-16 sm:py-20 lg:py-28 bg-slate-50 border-t border-b border-gray-200">
+   399→   399→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   400→   400→            <div class="max-w-4xl mx-auto text-center mb-12 sm:mb-16">
+   401→   401→                <span class="text-brand-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">Our Capabilities</span>
+   402→   402→                <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-900 tracking-tight">
+   403→   403→                    Integrated IT Capabilities Built for Scale
+   404→   404→                </h2>
+   405→   405→            </div>
+   406→   406→            
+   407→   407→            <div class="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start">
+   408→   408→                <div class="lg:col-span-3">
+   409→   409→                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
+   410→   410→                        Driven by a strong foundation of diversity and innovation, Nueva Solutions delivers sustainable, technology-led <strong class="text-gray-900">integrated IT staffing and consulting solutions</strong> that simplify and transform complex operations. We enable businesses with bespoke <strong class="text-gray-900">staff augmentation and managed services</strong> designed for efficiency, scalability, and long-term growth.
+   411→   411→                    </p>
+   412→   412→                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
+   413→   413→                        Since our inception in 2008, we have built a robust network with operations spanning the entire United States, including our primary headquarters in New York City and a major office in Sunrise, Florida. Our large-scale infrastructure, skilled workforce, and advanced systems support consistent service delivery across diverse geographies.
+   414→   414→                    </p>
+   415→   415→                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
+   416→   416→                        We serve leading organizations across finance, healthcare, retail, and public sectors, offering comprehensive technology staffing, project management, and enterprise solutions. Our integrated capabilities and deep networks position Nueva Solutions among the most trusted <strong class="text-gray-900">Women & Minority-owned IT staffing partners in the US</strong>.
+   417→   417→                    </p>
+   418→   418→                    <a href="#contact" class="inline-flex items-center px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-lg shadow-sm transition-all text-sm sm:text-base">
+   419→   419→                        Partner With Us <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+   420→   420→                    </a>
+   421→   421→                </div>
+   422→   422→                
+   423→   423→                <div class="lg:col-span-2 bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm h-fit">
+   424→   424→                    <h4 class="font-bold text-gray-900 mb-6 text-lg">Core Technology Stacks We Hire For:</h4>
+   425→   425→                    <div className="flex flex-wrap gap-2">
+   426→   426→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">Java / J2EE</span>
+   427→   427→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">Python</span>
+   428→   428→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">React / Angular</span>
+   429→   429→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">AWS / Azure</span>
+   430→   430→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">CyberArk</span>
+   431→   431→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">SAP FIORI</span>
+   432→   432→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">Salesforce</span>
+   433→   433→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">Snowflake</span>
+   434→   434→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">DevOps</span>
+   435→   435→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">Data Engineering</span>
+   436→   436→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">SQL / NoSQL</span>
+   437→   437→                        <span class="px-3 py-1.5 bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium rounded-lg">API Integration</span>
+   438→   438→                    </div>
+   439→   439→                </div>
+   440→   440→            </div>
+   441→   441→        </div>
+   442→   442→    </section>
+   443→   443→
+   444→   444→    <!-- ========================================== -->
+   445→   445→    <!-- FEATURED CAREERS SECTION                   -->
+   446→   446→    <!-- ========================================== -->
+   447→   447→    <section id="careers" class="py-16 sm:py-20 lg:py-28 bg-white">
+   448→   448→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   449→   449→            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10 sm:mb-12 gap-4">
+   450→   450→                <div>
+   451→   451→                    <span class="text-brand-600 font-semibold text-xs sm:text-sm uppercase tracking-wider">Join Our Network</span>
+   452→   452→                    <h2 class="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-900 tracking-tight">Featured Opportunities</h2>
+   453→   453→                </div>
+   454→   454→                <a href="#" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 group">
+   455→   455→                    View All Openings <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+   456→   456→                </a>
+   457→   457→            </div>
+   458→   458→
+   459→   459→            <div class="space-y-4">
+   460→   460→                <!-- Job Row 1 -->
+   461→   461→                <a href="#" class="block bg-white p-5 sm:p-6 rounded-xl border border-gray-200 hover:border-brand-200 hover:shadow-md transition-all group">
+   462→   462→                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+   463→   463→                        <div class="flex-1">
+   464→   464→                            <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-brand-600 transition">Senior React Developer</h3>
+   465→   465→                            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
+   466→   466→                                <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4"></i> New York, NY</span>
+   467→   467→                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> Contract</span>
+   468→   468→                            </div>
+   469→   469→                        </div>
+   470→   470→                        <div class="flex items-center gap-3">
+   471→   471→                            <span class="hidden sm:inline-block px-3 py-1 bg-blue-50 text-brand-700 text-xs font-semibold rounded-full">Frontend</span>
+   472→   472→                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-600 transition"></i>
+   473→   473→                        </div>
+   474→   474→                    </div>
+   475→   475→                </a>
+   476→   476→
+   477→   477→                <!-- Job Row 2 -->
+   478→   478→                <a href="#" class="block bg-white p-5 sm:p-6 rounded-xl border border-gray-200 hover:border-brand-200 hover:shadow-md transition-all group">
+   479→   479→                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+   480→   480→                        <div class="flex-1">
+   481→   481→                            <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-brand-600 transition">Cyber Security Analyst (SOC)</h3>
+   482→   482→                            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
+   483→   483→                                <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4"></i> Remote</span>
+   484→   484→                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> Contract-to-Hire</span>
+   485→   485→                            </div>
+   486→   486→                        </div>
+   487→   487→                        <div class="flex items-center gap-3">
+   488→   488→                            <span class="hidden sm:inline-block px-3 py-1 bg-red-50 text-red-700 text-xs font-semibold rounded-full">Security</span>
+   489→   489→                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-600 transition"></i>
+   490→   490→                        </div>
+   491→   491→                    </div>
+   492→   492→                </a>
+   493→   493→
+   494→   494→                <!-- Job Row 3 -->
+   495→   495→                <a href="#" class="block bg-white p-5 sm:p-6 rounded-xl border border-gray-200 hover:border-brand-200 hover:shadow-md transition-all group">
+   496→   496→                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+   497→   497→                        <div class="flex-1">
+   498→   498→                            <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-brand-600 transition">Salesforce Architect</h3>
+   499→   499→                            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-sm text-gray-500">
+   500→   500→                                <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4"></i> Sunrise, FL</span>
+   501→   501→                                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> Direct Hire</span>
+   502→   502→                            </div>
+   503→   503→                        </div>
+   504→   504→                        <div class="flex items-center gap-3">
+   505→   505→                            <span class="hidden sm:inline-block px-3 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-full">CRM</span>
+   506→   506→                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-brand-600 transition"></i>
+   507→   507→                        </div>
+   508→   508→                    </div>
+   509→   509→                </a>
+   510→   510→            </div>
+   511→   511→        </div>
+   512→   512→    </section>
+   513→   513→
+   514→   514→    <!-- ========================================== -->
+   515→   515→    <!-- CONTACT / CTA SECTION                      -->
+   516→   516→    <!-- ========================================== -->
+   517→   517→    <section id="contact" class="py-16 sm:py-20 lg:py-28 bg-gray-50">
+   518→   518→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   519→   519→            <div class="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+   520→   520→                <div class="grid lg:grid-cols-5">
+   521→   521→                    <!-- Left Side Info -->
+   522→   522→                    <div class="bg-brand-900 text-white p-8 sm:p-10 lg:p-12 lg:col-span-2 flex flex-col justify-between">
+   523→   523→                        <div>
+   524→   524→                            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Let's Build Your IT Team</h2>
+   525→   525→                            <p class="mt-4 text-blue-200 leading-relaxed text-sm sm:text-base">Whether you need a single specialized developer or a 50-person managed services team, we have the network to deliver.</p>
+   526→   526→                        </div>
+   527→   527→                        <div class="mt-10 space-y-6">
+   528→   528→                            <div class="flex items-start gap-4">
+   529→   529→                                <div class="p-2 bg-white/10 rounded-lg mt-1"><i data-lucide="map-pin" class="w-5 h-5 text-accent-400"></i></div>
+   530→   530→                                <div>
+   531→   531→                                    <p class="text-sm text-blue-200">Primary Office</p>
+   532→   532→                                    <p class="font-semibold text-sm sm:text-base">1410 Broadway, Suite 1904<br>New York City, NY 10018</p>
+   533→   533→                                </div>
+   534→   534→                            </div>
+   535→   535→                            <div class="flex items-start gap-4">
+   536→   536→                                <div class="p-2 bg-white/10 rounded-lg mt-1"><i data-lucide="building-2" class="w-5 h-5 text-accent-400"></i></div>
+   537→   537→                                <div>
+   538→   538→                                    <p class="text-sm text-blue-200">Regional Office</p>
+   539→   539→                                    <p class="font-semibold text-sm sm:text-base">2681 N Flamingo Road<br>Sunrise, FL 33323</p>
+   540→   540→                                </div>
+   541→   541→                            </div>
+   542→   542→                            <div class="flex items-start gap-4">
+   543→   543→                                <div class="p-2 bg-white/10 rounded-lg mt-1"><i data-lucide="phone" class="w-5 h-5 text-accent-400"></i></div>
+   544→   544→                                <div>
+   545→   545→                                    <p class="text-sm text-blue-200">Call Us</p>
+   546→   546→                                    <p class="font-semibold text-sm sm:text-base">(212) 555-0198</p>
+   547→   547→                                </div>
+   548→   548→                            </div>
+   549→   549→                        </div>
+   550→   550→                    </div>
+   551→   551→
+   552→   552→                    <!-- Right Side Form -->
+   553→   553→                    <div class="p-8 sm:p-10 lg:p-12 lg:col-span-3" x-data="{ formSubmitted: false }">
+   554→   554→                        <form @submit.prevent="formSubmitted = true" x-show="!formSubmitted" class="space-y-5 sm:space-y-6">
+   555→   555→                            <div class="grid sm:grid-cols-2 gap-5 sm:gap-6">
+   556→   556→                                <div>
+   557→   557→                                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+   558→   558→                                    <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-sm sm:text-base">
+   559→   559→                                </div>
+   560→   560→                                <div>
+   561→   561→                                    <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+   562→   562→                                    <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-sm sm:text-base">
+   563→   563→                                </div>
+   564→   564→                            </div>
+   565→   565→                            <div>
+   566→   566→                                <label class="block text-sm font-medium text-gray-700 mb-2">Work Email</label>
+   567→   567→                                <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-sm sm:text-base">
+   568→   568→                            </div>
+   569→   569→                            <div>
+   570→   570→                                <label class="block text-sm font-medium text-gray-700 mb-2">How can we help?</label>
+   571→   571→                                <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-sm sm:text-base text-gray-600">
+   572→   572→                                    <option>Staff Augmentation</option>
+   573→   573→                                    <option>Direct Hire Search</option>
+   574→   574→                                    <option>Managed Services / Consulting</option>
+   575→   575→                                    <option>I am a Job Seeker</option>
+   576→   576→                                </select>
+   577→   577→                            </div>
+   578→   578→                            <div>
+   579→   579→                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+   580→   580→                                <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition resize-none text-sm sm:text-base"></textarea>
+   581→   581→                            </div>
+   582→   582→                            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg shadow-brand-600/30 transition-all hover:shadow-xl text-sm sm:text-base">
+   583→   583→                                Submit Request
+   584→   584→                            </button>
+   585→   585→                        </form>
+   586→   586→                        
+   587→   587→                        <div x-show="formSubmitted" class="h-full flex flex-col items-center justify-center text-center py-10">
+   588→   588→                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6">
+   589→   589→                                <i data-lucide="check" class="w-8 h-8"></i>
+   590→   590→                            </div>
+   591→   591→                            <h3 class="text-2xl font-bold text-gray-900">Request Received!</h3>
+   592→   592→                            <p class="mt-2 text-gray-500 max-w-sm text-sm sm:text-base">Our team will review your requirements and reach out within 24 hours.</p>
+   593→   593→                        </div>
+   594→   594→                    </div>
+   595→   595→                </div>
+   596→   596→            </div>
+   597→   597→        </div>
+   598→   598→    </section>
+   599→   599→
+   600→   600→    <!-- ========================================== -->
+   601→   601→    <!-- FOOTER                                     -->
+   602→   602→    <!-- ========================================== -->
+   603→   603→    <footer class="bg-gray-900 text-gray-400 pt-12 sm:pt-16 pb-8">
+   604→   604→        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   605→   605→            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-10 sm:pb-12 border-b border-gray-800">
+   606→   606→                <div class="col-span-2 md:col-span-1">
+   607→   607→                    <a href="#" class="flex items-center space-x-2 mb-4">
+   608→   608→                        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
+   609→   609→                            <span class="text-white font-bold text-lg">N</span>
+   610→   610→                        </div>
+   611→   611→                        <span class="text-xl font-bold text-white">Nueva</span>
+   612→   612→                    </a>
+   613→   613→                    <p class="text-sm leading-relaxed mb-6">Searching Best Minds. Your trusted partner for IT Staffing and Management Services since 2008.</p>
+   614→   614→                    <div class="flex space-x-3">
+   615→   615→                        <a href="#" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-600 transition text-gray-400 hover:text-white"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+   616→   616→                        <a href="#" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-600 transition text-gray-400 hover:text-white"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+   617→   617→                        <a href="#" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-brand-600 transition text-gray-400 hover:text-white"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+   618→   618→                    </div>
+   619→   619→                </div>
+   620→   620→                <div>
+   621→   621→                    <h4 class="text-white font-semibold mb-4 text-sm sm:text-base">Services</h4>
+   622→   622→                    <ul class="space-y-2.5 text-sm">
+   623→   623→                        <li><a href="#" class="hover:text-white transition">IT Staffing</a></li>
+   624→   624→                        <li><a href="#" class="hover:text-white transition">Project Management</a></li>
+   625→   625→                        <li><a href="#" class="hover:text-white transition">Cyber Security</a></li>
+   626→   626→                        <li><a href="#" class="hover:text-white transition">Data Management</a></li>
+   627→   627→                        <li><a href="#" class="hover:text-white transition">SAP & Salesforce</a></li>
+   628→   628→                    </ul>
+   629→   629→                </div>
+   630→   630→                <div>
+   631→   631→                    <h4 class="text-white font-semibold mb-4 text-sm sm:text-base">Company</h4>
+   632→   632→                    <ul class="space-y-2.5 text-sm">
+   633→   633→                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+   634→   634→                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+   635→   635→                        <li><a href="#" class="hover:text-white transition">Case Studies</a></li>
+   636→   636→                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+   637→   637→                    </ul>
+   638→   638→                </div>
+   639→   639→                <div>
+   640→   640→                    <h4 class="text-white font-semibold mb-4 text-sm sm:text-base">Locations</h4>
+   641→   641→                    <ul class="space-y-4 text-sm">
+   642→   642→                        <li class="flex items-start gap-2.5">
+   643→   643→                            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-500"></i> 
+   644→   644→                            <span>1410 Broadway, Suite 1904<br>New York City, NY 10018</span>
+   645→   645→                        </li>
+   646→   646→                        <li class="flex items-start gap-2.5">
+   647→   647→                            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0 text-brand-500"></i> 
+   648→   648→                            <span>2681 N Flamingo Road<br>Sunrise, FL 33323</span>
+   649→   649→                        </li>
+   650→   650→                    </ul>
+   651→   651→                </div>
+   652→   652→            </div>
+   653→   653→            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+   654→   654→                <p>&copy; 2024 Nueva Solutions Inc. All rights reserved.</p>
+   655→   655→                <div class="flex gap-6">
+   656→   656→                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+   657→   657→                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+   658→   658→                </div>
+   659→   659→            </div>
+   660→   660→        </div>
+   661→   661→    </footer>
+   662→   662→
+   663→   663→    <script>
+   664→   664→        lucide.createIcons();
+   665→   665→    </script>
+   666→   666→</body>
+   667→   667→</html>

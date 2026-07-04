@@ -1,0 +1,564 @@
+     1→     1→import type { LucideIcon } from "lucide-react";
+     2→     2→import {
+     3→     3→  Warehouse, Truck, PackageCheck, Boxes, ClipboardList, ShieldCheck,
+     4→     4→  ShoppingCart, Snowflake, Recycle, Network, Cpu, BarChart3,
+     5→     5→  Headphones, Leaf, MapPin, Clock, IndianRupee, Users, Building2, Route,
+     6→     6→  Smartphone, Factory, Pill, Shirt, Car, Laptop, Utensils,
+     7→     7→  Package, Globe, BadgeCheck, Wrench, MessageSquare,
+     8→     8→} from "lucide-react";
+     9→     9→
+    10→    10→/* ------------------------------------------------------------------ */
+    11→    11→/* NAVIGATION                                                          */
+    12→    12→/* ------------------------------------------------------------------ */
+    13→    13→export const NAV_LINKS = [
+    14→    14→  { label: "Services", href: "#services" },
+    15→    15→  { label: "Industries", href: "#industries" },
+    16→    16→  { label: "Why Us", href: "#why-us" },
+    17→    17→  { label: "Technology", href: "#technology" },
+    18→    18→  { label: "Network", href: "#network" },
+    19→    19→  { label: "About", href: "#about" },
+    20→    20→  { label: "Careers", href: "#careers" },
+    21→    21→  { label: "Insights", href: "#insights" },
+    22→    22→  { label: "Contact", href: "#contact" },
+    23→    23→];
+    24→    24→
+    25→    25→export const TOP_BAR = {
+    26→    26→  phone: "+91 80 4567 8900",
+    27→    27→  email: "hello@bharatsupplychain.in",
+    28→    28→  hours: "Mon–Sat · 9:00 AM – 7:00 PM IST",
+    29→    29→  locations: "HO: Bengaluru · Mumbai · Delhi NCR · Chennai · Kolkata",
+    30→    30→};
+    31→    31→
+    32→    32→/* ------------------------------------------------------------------ */
+    33→    33→/* HERO                                                                */
+    34→    34→/* ------------------------------------------------------------------ */
+    35→    35→export const HERO = {
+    36→    36→  badge: "Trusted by 400+ Indian & global brands",
+    37→    37→  title: "Integrated Supply Chain & 3PL Solutions, Built for Bharat",
+    38→    38→  highlight: "for Bharat",
+    39→    39→  subtitle:
+    40→    40→    "From warehousing and contract logistics to transportation and e-commerce fulfilment — we engineer resilient, tech-driven supply chains that move your business across every Indian pin code, faster and leaner.",
+    41→    41→  primaryCta: { label: "Get a Free Consultation", href: "#contact" },
+    42→    42→  secondaryCta: { label: "Explore Services", href: "#services" },
+    43→    43→  highlights: [
+    44→    44→    { icon: MapPin, label: "8,000+ pin codes served" },
+    45→    45→    { icon: Building2, label: "120+ warehouses pan-India" },
+    46→    46→    { icon: Clock, label: "24×7 control tower" },
+    47→    47→    { icon: ShieldCheck, label: "ISO 9001:2015 certified" },
+    48→    48→  ],
+    49→    49→};
+    50→    50→
+    51→    51→/* ------------------------------------------------------------------ */
+    52→    52→/* STATS                                                               */
+    53→    53→/* ------------------------------------------------------------------ */
+    54→    54→export const STATS = [
+    55→    55→  { icon: Building2, value: 120, suffix: "+", label: "Warehouses across India", sub: "Multi-user & dedicated" },
+    56→    56→  { icon: Boxes, value: 8.5, suffix: " Mn sq.ft", label: "Storage capacity", sub: "Across 28 states", decimals: 1 },
+    57→    57→  { icon: MapPin, value: 8000, suffix: "+", label: "Pin codes served", sub: "Last-mile reach" },
+    58→    58→  { icon: Truck, value: 3500, suffix: "+", label: "Fleet vehicles", sub: "Owned & partnered" },
+    59→    59→  { icon: PackageCheck, value: 4.2, suffix: " Mn", label: "Orders fulfilled / month", sub: "Peak-ready", decimals: 1 },
+    60→    60→  { icon: Users, value: 450, suffix: "+", label: "Supply-chain experts", sub: "On the ground" },
+    61→    61→];
+    62→    62→
+    63→    63→/* ------------------------------------------------------------------ */
+    64→    64→/* TRUSTED CLIENTS (text logos for marquee)                            */
+    65→    65→/* ------------------------------------------------------------------ */
+    66→    66→export const CLIENTS = [
+    67→    67→  "Reliance Retail", "Flipkart", "Tata Consumer", "Aditya Birla", "DMart",
+    68→    68→  "Hindustan Unilever", "Nestlé India", "ITC Limited", "Asian Paints",
+    69→    69→  "Bajaj Electricals", "Boat Lifestyle", "Mamaearth", "Philips India",
+    70→    70→  "Pidilite", "Dabur India", "Godrej Consumer", "Patanjali", "Myntra",
+    71→    71→];
+    72→    72→
+    73→    73→/* ------------------------------------------------------------------ */
+    74→    74→/* ABOUT                                                               */
+    75→    75→/* ------------------------------------------------------------------ */
+    76→    76→export const ABOUT = {
+    77→    77→  eyebrow: "About Bharat Supply Chain",
+    78→    78→  title: "Engineering supply chains that keep India moving — since 2009",
+    79→    79→  body:
+    80→    80→    "Headquartered in Bengaluru, Bharat Supply Chain Solutions Pvt. Ltd. is one of India's fastest-growing integrated 3PL and contract logistics providers. We combine deep domain expertise, a pan-India asset network and a proprietary technology stack to design, run and optimise supply chains for retail, e-commerce, FMCG, auto, pharma and industrial enterprises.",
+    81→    81→  points: [
+    82→    82→    { icon: BadgeCheck, title: "Asset-backed network", text: "Owned warehouses, MHEs and a managed fleet — control from dock to doorstep." },
+    83→    83→    { icon: Cpu, title: "Technology-first", text: "In-house WMS, TMS & control tower with real-time visibility and analytics." },
+    84→    84→    { icon: Leaf, title: "Sustainable by design", text: "Solar-powered warehouses, EV last-mile and packaging reduction targets." },
+    85→    85→    { icon: Headphones, title: "Single point of accountability", text: "Dedicated client success managers and 24×7 operations support." },
+    86→    86→  ],
+    87→    87→  milestones: [
+    88→    88→    { year: "2009", text: "Founded in Bengaluru with 1 warehouse" },
+    89→    89→    { year: "2014", text: "Expanded to 5 metros, launched WMS v1" },
+    90→    90→    { year: "2018", text: "Crossed 1 Mn sq.ft; e-commerce fulfilment live" },
+    91→    91→    { year: "2021", text: "Control tower & TMS launched pan-India" },
+    92→    92→    { year: "2024", text: "8.5 Mn sq.ft · 28 states · 8,000+ pin codes" },
+    93→    93→  ],
+    94→    94→};
+    95→    95→
+    96→    96→/* ------------------------------------------------------------------ */
+    97→    97→/* SERVICES                                                            */
+    98→    98→/* ------------------------------------------------------------------ */
+    99→    99→export interface Service {
+   100→   100→  icon: LucideIcon;
+   101→   101→  title: string;
+   102→   102→  desc: string;
+   103→   103→  features: string[];
+   104→   104→  accent?: "teal" | "saffron";
+   105→   105→}
+   106→   106→
+   107→   107→export const SERVICES: Service[] = [
+   108→   108→  {
+   109→   109→    icon: Warehouse,
+   110→   110→    title: "Warehousing & Distribution",
+   111→   111→    desc: "Multi-user and dedicated warehousing with bonded & temperature-controlled zones, backed by a cloud WMS.",
+   112→   112→    features: ["Bonder & FTWZ facilities", "Rack-supported design", "Pick-pack-ship", "Cross-docking"],
+   113→   113→    accent: "teal",
+   114→   114→  },
+   115→   115→  {
+   116→   116→    icon: Truck,
+   117→   117→    title: "Transportation & Freight",
+   118→   118→    desc: "Full-truck, part-truck, express and project cargo movement with GPS-tracked, GPS-validated fleet.",
+   119→   119→    features: ["FTL / PTL / LTL", "Container & ODC", "GPS + geo-fencing", "Dedicated SPOC"],
+   120→   120→    accent: "saffron",
+   121→   121→  },
+   122→   122→  {
+   123→   123→    icon: PackageCheck,
+   124→   124→    title: "Contract Logistics",
+   125→   125→    desc: "End-to-end, customised logistics operating partnerships with committed SLAs and shared risk-reward.",
+   126→   126→    features: ["Design → run → optimise", "SLA-backed", "Dedicated assets", "Quarterly business reviews"],
+   127→   127→    accent: "teal",
+   128→   128→  },
+   129→   129→  {
+   130→   130→    icon: ShoppingCart,
+   131→   131→    title: "E-commerce Fulfilment",
+   132→   132→    desc: "High-velocity fulfilment for marketplaces and D2C brands with same-day dispatch and returns processing.",
+   133→   133→    features: ["Marketplace integration", "D2C & quick-commerce", "Returns & QC", "Same-day dispatch"],
+   134→   134→    accent: "saffron",
+   135→   135→  },
+   136→   136→  {
+   137→   137→    icon: ClipboardList,
+   138→   138→    title: "Inventory Management",
+   139→   139→    desc: "Demand-aware stocking, ABC/XYZ analysis, safety-stock optimisation and cycle counting.",
+   140→   140→    features: ["ABC/XYZ analysis", "Cycle counting", "Slow-mover management", "Replenishment planning"],
+   141→   141→    accent: "teal",
+   142→   142→  },
+   143→   143→  {
+   144→   144→    icon: Snowflake,
+   145→   145→    title: "Cold Chain & Pharma",
+   146→   146→    desc: "Temperature-controlled storage and transport (2–8°C, –18°C) with GDP compliance and data loggers.",
+   147→   147→    features: ["GDP compliant", "Temp-controlled fleet", "Data loggers", "Pharma validations"],
+   148→   148→    accent: "teal",
+   149→   149→  },
+   150→   150→  {
+   151→   151→    icon: Recycle,
+   152→   152→    title: "Reverse Logistics",
+   153→   153→    desc: "Returns, refurbishment, recycling and e-waste disposition with audit-ready trails.",
+   154→   154→    features: ["Returns triage", "Refurb & resale", "E-waste disposal", "RTO optimisation"],
+   155→   155→    accent: "saffron",
+   156→   156→  },
+   157→   157→  {
+   158→   158→    icon: Wrench,
+   159→   159→    title: "Value-Added Services",
+   160→   160→    desc: "Kitting, bundling, packaging, labelling, assembly and pre-retail tasks inside the warehouse.",
+   161→   161→    features: ["Kitting & bundling", "Labelling & MRP", "Sub-assembly", "Promo packs"],
+   162→   162→    accent: "teal",
+   163→   163→  },
+   164→   164→  {
+   165→   165→    icon: BarChart3,
+   166→   166→    title: "Supply Chain Consulting",
+   167→   167→    desc: "Network design, S&OP, cost-to-serve analysis and digital transformation advisory.",
+   168→   168→    features: ["Network design", "Cost-to-serve", "S&OP advisory", "Digital roadmap"],
+   169→   169→    accent: "saffron",
+   170→   170→  },
+   171→   171→];
+   172→   172→
+   173→   173→/* ------------------------------------------------------------------ */
+   174→   174→/* INDUSTRIES (tabbed)                                                 */
+   175→   175→/* ------------------------------------------------------------------ */
+   176→   176→export interface Industry {
+   177→   177→  id: string;
+   178→   178→  icon: LucideIcon;
+   179→   179→  name: string;
+   180→   180→  blurb: string;
+   181→   181→  offerings: string[];
+   182→   182→  metric: { value: string; label: string };
+   183→   183→}
+   184→   184→
+   185→   185→export const INDUSTRIES: Industry[] = [
+   186→   186→  {
+   187→   187→    id: "ecommerce",
+   188→   188→    icon: ShoppingCart,
+   189→   189→    name: "E-commerce & Retail",
+   190→   190→    blurb: "Omnichannel fulfilment for marketplaces, D2C brands and large-format retail with peak-season elasticity.",
+   191→   191→    offerings: ["Marketplace FULFILMENT", "D2C & quick-commerce", "Store replenishment", "Returns & RTO"],
+   192→   192→    metric: { value: "99.2%", label: "On-time dispatch" },
+   193→   193→  },
+   194→   194→  {
+   195→   195→    id: "fmcg",
+   196→   196→    icon: Package,
+   197→   197→    name: "FMCG & Consumer Goods",
+   198→   198→    blurb: "High-velocity distribution with primary, secondary and tertiary movement and sales-order integration.",
+   199→   199→    offerings: ["Primary & secondary distribution", "SE/PSO integration", "Shelf-ready packaging", "DSD"],
+   200→   200→    metric: { value: "32 hrs", label: "Avg. cycle time" },
+   201→   201→  },
+   202→   202→  {
+   203→   203→    id: "auto",
+   204→   204→    icon: Car,
+   205→   205→    name: "Automotive & EV",
+   206→   206→    blurb: "Inbound-to-line, sequenced deliveries, after-parts distribution and EV battery handling.",
+   207→   207→    offerings: ["Inbound-to-line", "Sequential JIT", "Aftermarket parts", "EV battery logistics"],
+   208→   208→    metric: { value: "99.9%", label: "Line-side accuracy" },
+   209→   209→  },
+   210→   210→  {
+   211→   211→    id: "pharma",
+   212→   212→    icon: Pill,
+   213→   213→    name: "Pharma & Healthcare",
+   214→   214→    blurb: "GDP-compliant cold chain for formulations, vaccines, devices and hospital supplies.",
+   215→   215→    offerings: ["GDP-compliant storage", "2–8°C & –18°C transport", "Recall management", "Batch & expiry control"],
+   216→   216→    metric: { value: "100%", label: "Temp integrity" },
+   217→   217→  },
+   218→   218→  {
+   219→   219→    id: "electronics",
+   220→   220→    icon: Laptop,
+   221→   221→    name: "Electronics & Technology",
+   222→   222→    blurb: "High-value, anti-static handling for CE, appliances and mobile devices with serial-level tracking.",
+   223→   223→    offerings: ["Serial / IMEI tracking", "Anti-static zones", "Secure cages", "Installer dispatch"],
+   224→   224→    metric: { value: "<0.1%", label: "Shrinkage" },
+   225→   225→  },
+   226→   226→  {
+   227→   227→    id: "industrial",
+   228→   228→    icon: Factory,
+   229→   229→    name: "Industrial & Manufacturing",
+   230→   230→    blurb: "Vendor-managed inventory, inbound logistics and project cargo for heavy industry.",
+   231→   231→    offerings: ["VMI hubs", "Inbound logistics", "Project cargo", "MRO management"],
+   232→   232→    metric: { value: "15%", label: "Inventory reduction" },
+   233→   233→  },
+   234→   234→  {
+   235→   235→    id: "food",
+   236→   236→    icon: Utensils,
+   237→   237→    name: "Food & Beverage",
+   238→   238→    blurb: "Cold and ambient storage for packaged foods, perishables and QSR supply chains.",
+   239→   239→    offerings: ["Cold storage", "FIFO / FEFO", "QSR distribution", "Compliance & FSSAI"],
+   240→   240→    metric: { value: "0", label: "Cold-chain breaks" },
+   241→   241→  },
+   242→   242→  {
+   243→   243→    id: "textile",
+   244→   244→    icon: Shirt,
+   245→   245→    name: "Textile & Apparel",
+   246→   246→    blurb: "Garment-on-hanger, pre-retail finishing and seasonal distribution for apparel brands.",
+   247→   247→    offerings: ["GOH handling", "Pre-retail finishing", "Seasonal push", "Mystery-box fulfilment"],
+   248→   248→    metric: { value: "24 hrs", label: "To-shelf ready" },
+   249→   249→  },
+   250→   250→];
+   251→   251→
+   252→   252→/* ------------------------------------------------------------------ */
+   253→   253→/* WHY US                                                              */
+   254→   254→/* ------------------------------------------------------------------ */
+   255→   255→export const WHY_US = [
+   256→   256→  { icon: Network, title: "Pan-India reach", text: "28 states, 8,000+ pin codes and last-mile partners in every district." },
+   257→   257→  { icon: Cpu, title: "Proprietary tech", text: "WMS, TMS, OMS and control tower — fully integrated, real-time." },
+   258→   258→  { icon: ShieldCheck, title: "Compliance & risk", text: "ISO 9001, GDP, FSSAI, AEO and CTPAT-aligned processes." },
+   259→   259→  { icon: Clock, title: "24×7 operations", text: "Round-the-clock control tower and hub operations for time-critical flows." },
+   260→   260→  { icon: IndianRupee, title: "Cost-to-serve focus", text: "Continuous optimisation that reduces your landed cost, not just your rate." },
+   261→   261→  { icon: Leaf, title: "Sustainable logistics", text: "Solar warehouses, EV last-mile and a science-based emissions reduction target." },
+   262→   262→];
+   263→   263→
+   264→   264→/* ------------------------------------------------------------------ */
+   265→   265→/* TECHNOLOGY                                                          */
+   266→   266→/* ------------------------------------------------------------------ */
+   267→   267→export const TECH = {
+   268→   268→  eyebrow: "Technology & Innovation",
+   269→   269→  title: "One control tower. Total visibility. End-to-end control.",
+   270→   270→  body:
+   271→   271→    "Our proprietary suite — bTower — unifies WMS, TMS, OMS and analytics so you see every SKU, every vehicle and every order in one place, in real time.",
+   272→   272→  features: [
+   273→   273→    { icon: Boxes, title: "bTower WMS", text: "Slotting, wave-picking, cycle counting and EDI integration with your ERP." },
+   274→   274→    { icon: Route, title: "bTower TMS", text: "Route optimisation, freight procurement, e-POD and freight audit." },
+   275→   275→    { icon: BarChart3, title: "Control Tower", text: "Exception management, predictive ETA and proactive intervention." },
+   276→   276→    { icon: Smartphone, title: "Customer Portal & App", text: "Live inventory, orders, track-and-trace and reports on the go." },
+   277→   277→    { icon: Globe, title: "API & EDI", text: "Plug-and-play connectors for SAP, Oracle, Shopify, Amazon and more." },
+   278→   278→    { icon: MessageSquare, title: "AI forecasting", text: "Demand sensing and inventory positioning driven by machine learning." },
+   279→   279→  ],
+   280→   280→};
+   281→   281→
+   282→   282→/* ------------------------------------------------------------------ */
+   283→   283→/* NETWORK                                                             */
+   284→   284→/* ------------------------------------------------------------------ */
+   285→   285→export const NETWORK = {
+   286→   286→  eyebrow: "Pan-India Network",
+   287→   287→  title: "Wherever your customers are, we already are.",
+   288→   288→  body:
+   289→   289→    "A hub-and-spoke network anchored by mega-fulfilment centres in the metros and a dense spoke network reaching every tier-2 and tier-3 town.",
+   290→   290→  hubs: [
+   291→   291→    { city: "Bengaluru", type: "Mega FC", area: "1.2 Mn sq.ft" },
+   292→   292→    { city: "Mumbai (Bhiwandi)", type: "Mega FC", area: "1.4 Mn sq.ft" },
+   293→   293→    { city: "Delhi NCR (Bilaspur)", type: "Mega FC", area: "1.1 Mn sq.ft" },
+   294→   294→    { city: "Chennai", type: "Regional Hub", area: "0.7 Mn sq.ft" },
+   295→   295→    { city: "Kolkata", type: "Regional Hub", area: "0.6 Mn sq.ft" },
+   296→   296→    { city: "Hyderabad", type: "Regional Hub", area: "0.6 Mn sq.ft" },
+   297→   297→    { city: "Ahmedabad", type: "Regional Hub", area: "0.5 Mn sq.ft" },
+   298→   298→    { city: "Guwahati", type: "Spoke Hub", area: "0.2 Mn sq.ft" },
+   299→   299→  ],
+   300→   300→  regions: [
+   301→   301→    { name: "North", states: "Delhi, UP, Punjab, Haryana, Rajasthan", hubs: 24 },
+   302→   302→    { name: "South", states: "Karnataka, TN, Kerala, AP, Telangana", hubs: 31 },
+   303→   303→    { name: "West", states: "Maharashtra, Gujarat, Goa, MP", hubs: 28 },
+   304→   304→    { name: "East & NE", states: "WB, Odisha, Assam, NE states", hubs: 18 },
+   305→   305→  ],
+   306→   306→};
+   307→   307→
+   308→   308→/* ------------------------------------------------------------------ */
+   309→   309→/* PROCESS                                                             */
+   310→   310→/* ------------------------------------------------------------------ */
+   311→   311→export const PROCESS = [
+   312→   312→  { step: "01", title: "Discover & Diagnose", text: "We map your current supply chain, cost-to-serve and pain points in a 2-week consulting sprint." },
+   313→   313→  { step: "02", title: "Design & Engineer", text: "Network design, SOPs, tech integration plan and SLA framework tailored to your goals." },
+   314→   314→  { step: "03", title: "Deploy & Integrate", text: "Warehouse setup, fleet onboarding, WMS/TMS integration and team training — go-live in weeks." },
+   315→   315→  { step: "04", title: "Run & Optimise", text: "24×7 operations, control-tower monitoring and quarterly continuous-improvement reviews." },
+   316→   316→];
+   317→   317→
+   318→   318→/* ------------------------------------------------------------------ */
+   319→   319→/* SUSTAINABILITY                                                      */
+   320→   320→/* ------------------------------------------------------------------ */
+   321→   321→export const SUSTAINABILITY = [
+   322→   322→  { icon: Leaf, title: "Solar-powered warehouses", text: "4.2 MW of rooftop solar across our mega-FCs, cutting grid dependency by 38%." },
+   323→   323→  { icon: Truck, title: "EV last-mile fleet", text: "450+ electric 3-wheelers and cargo vans across 12 cities, scaling to 1,500 by 2026." },
+   324→   324→  { icon: Recycle, title: "Packaging reduction", text: "Right-sized cartons, reusable totes and a target to cut single-use plastic by 60%." },
+   325→   325→  { icon: BarChart3, title: "Carbon reporting", text: "Scope 1–3 emissions tracking per shipment, shared with every client quarterly." },
+   326→   326→];
+   327→   327→
+   328→   328→/* ------------------------------------------------------------------ */
+   329→   329→/* CASE STUDIES                                                        */
+   330→   330→/* ------------------------------------------------------------------ */
+   331→   331→export interface CaseStudy {
+   332→   332→  industry: string;
+   333→   333→  client: string;
+   334→   334→  title: string;
+   335→   335→  summary: string;
+   336→   336→  metrics: { value: string; label: string }[];
+   337→   337→}
+   338→   338→
+   339→   339→export const CASE_STUDIES: CaseStudy[] = [
+   340→   340→  {
+   341→   341→    industry: "E-commerce",
+   342→   342→    client: "Leading D2C beauty brand",
+   343→   343→    title: "Cut dispatch TAT by 63% for a festive-season surge",
+   344→   344→    summary:
+   345→   345→      "Stood up a dedicated fulfilment cell in Bhiwandi with wave-picking and marketplace integration to handle a 4.8× festive spike without breaching SLAs.",
+   346→   346→    metrics: [
+   347→   347→      { value: "63%", label: "Lower dispatch TAT" },
+   348→   348→      { value: "4.8×", label: "Peak volume handled" },
+   349→   349→      { value: "99.4%", label: "Order accuracy" },
+   350→   350→    ],
+   351→   351→  },
+   352→   352→  {
+   353→   353→    industry: "FMCG",
+   354→   354→    client: "Top-3 packaged foods major",
+   355→   355→    title: "Redistributed primary network to save ₹14 Cr/yr",
+   356→   356→    summary:
+   357→   357→      "Redesigned the primary distribution network across 4 zones, consolidating 22 hubs into 8 and optimising vehicle utilisation — all without dropping service levels.",
+   358→   358→    metrics: [
+   359→   359→      { value: "₹14 Cr", label: "Annual savings" },
+   360→   360→      { value: "−18%", label: "Freight cost / case" },
+   361→   361→      { value: "32 hrs", label: "Avg. cycle time" },
+   362→   362→    ],
+   363→   363→  },
+   364→   364→  {
+   365→   365→    industry: "Pharma",
+   366→   366→    client: "Global vaccines manufacturer",
+   367→   367→    title: "GDP-grade cold chain with 100% temperature integrity",
+   368→   368→    summary:
+   369→   369→      "Deployed 2–8°C storage at 3 hubs and a temp-controlled fleet with data loggers and geo-fenced routes for last-mile vaccine delivery across 6 states.",
+   370→   370→    metrics: [
+   371→   371→      { value: "100%", label: "Temp integrity" },
+   372→   372→      { value: "6", label: "States covered" },
+   373→   373→      { value: "0", label: "Cold-chain breaks" },
+   374→   374→    ],
+   375→   375→  },
+   376→   376→];
+   377→   377→
+   378→   378→/* ------------------------------------------------------------------ */
+   379→   379→/* TESTIMONIALS                                                        */
+   380→   380→/* ------------------------------------------------------------------ */
+   381→   381→export const TESTIMONIALS = [
+   382→   382→  {
+   383→   383→    quote:
+   384→   384→      "Bharat Supply Chain feels like an extension of our own team. Their control tower flagged a hub-level risk 18 hours before it could hurt our SLAs — that's the kind of partnership we needed.",
+   385→   385→    name: "Rohit Menon",
+   386→   386→    role: "VP Supply Chain",
+   387→   387→    company: "Leading beauty & personal care D2C",
+   388→   388→    initials: "RM",
+   389→   389→  },
+   390→   390→  {
+   391→   391→    quote:
+   392→   392→      "We moved from 5 fragmented 3PLs to a single contract logistics partner. Inventory accuracy moved from 96.1% to 99.6% and our cost-to-serve dropped by a fifth in the first year.",
+   393→   393→    name: "Anjali Deshpande",
+   394→   394→    role: "Head of Logistics",
+   395→   395→    company: "FMCG major",
+   396→   396→    initials: "AD",
+   397→   397→  },
+   398→   398→  {
+   399→   399→    quote:
+   400→   400→      "Their cold-chain discipline is best-in-class. Real-time data loggers, geo-fenced routes and zero temperature excursions across 14 months of vaccine distribution.",
+   401→   401→    name: "Dr. Senthil Kumar",
+   402→   402→    role: "Director, Distribution",
+   403→   403→    company: "Pharma & vaccines",
+   404→   404→    initials: "SK",
+   405→   405→  },
+   406→   406→  {
+   407→   407→    quote:
+   408→   408→      "The technology stack is genuinely differentiated. Our planners live in the customer portal — every shipment, every SKU, every exception, in one view.",
+   409→   409→    name: "Pooja Agarwal",
+   410→   410→    role: "Head of E-commerce",
+   411→   411→    company: "Consumer electronics brand",
+   412→   412→    initials: "PA",
+   413→   413→  },
+   414→   414→];
+   415→   415→
+   416→   416→/* ------------------------------------------------------------------ */
+   417→   417→/* LEADERSHIP                                                          */
+   418→   418→/* ------------------------------------------------------------------ */
+   419→   419→export const LEADERSHIP = [
+   420→   420→  { name: "Vikram Iyer", role: "Co-founder & CEO", initials: "VI", bio: "22 yrs in logistics. Ex-DHL, ex-Blue Dart. Built 3PL networks across APAC." },
+   421→   421→  { name: "Meera Nair", role: "Co-founder & COO", initials: "MN", bio: "18 yrs in supply chain ops. Scaled warehousing from 0.3 to 8.5 Mn sq.ft." },
+   422→   422→  { name: "Arjun Kapoor", role: "Chief Technology Officer", initials: "AK", bio: "Built bTower WMS/TMS. Ex-Flipkart, ex-Microsoft." },
+   423→   423→  { name: "Sneha Reddy", role: "Chief Commercial Officer", initials: "SR", bio: "16 yrs in B2B sales. Leads industry verticals & key accounts." },
+   424→   424→  { name: "Rajat Banerjee", role: "Head of Cold Chain & Pharma", initials: "RB", bio: "GDP & cold-chain specialist. Ex-World Health Organisation partner network." },
+   425→   425→  { name: "Fatima Sheikh", role: "Head of Sustainability", initials: "FS", bio: "Drives the net-zero roadmap, EV fleet and circular packaging programmes." },
+   426→   426→];
+   427→   427→
+   428→   428→/* ------------------------------------------------------------------ */
+   429→   429→/* CERTIFICATIONS                                                      */
+   430→   430→/* ------------------------------------------------------------------ */
+   431→   431→export const CERTIFICATIONS = [
+   432→   432→  { code: "ISO 9001:2015", label: "Quality Management" },
+   433→   433→  { code: "ISO 14001:2015", label: "Environmental" },
+   434→   434→  { code: "ISO 27001", label: "Information Security" },
+   435→   435→  { code: "GDP", label: "Good Distribution Practice" },
+   436→   436→  { code: "FSSAI", label: "Food Safety" },
+   437→   437→  { code: "AEO T2", label: "Authorized Economic Operator" },
+   438→   438→  { code: "CTPAT", label: "Supply-chain Security" },
+   439→   439→  { code: "Great Place to Work", label: "Certified 2024" },
+   440→   440→];
+   441→   441→
+   442→   442→/* ------------------------------------------------------------------ */
+   443→   443→/* AWARDS                                                              */
+   444→   444→/* ------------------------------------------------------------------ */
+   445→   445→export const AWARDS = [
+   446→   446→  { year: "2024", title: "3PL Provider of the Year", org: "Indian Supply Chain Awards" },
+   447→   447→  { year: "2024", title: "Best Warehouse Automation", org: "Logistics Excellence Awards" },
+   448→   448→  { year: "2023", title: "Sustainable Logistics Initiative", org: "Green Supply Chain Forum" },
+   449→   449→  { year: "2023", title: "Top 10 Cold Chain Companies", org: "Pharma Logistics Review" },
+   450→   450→  { year: "2022", title: "E-commerce Fulfilment Innovator", org: "Retail Tech India" },
+   451→   451→];
+   452→   452→
+   453→   453→/* ------------------------------------------------------------------ */
+   454→   454→/* CAREERS                                                             */
+   455→   455→/* ------------------------------------------------------------------ */
+   456→   456→export const CAREERS = {
+   457→   457→  eyebrow: "Careers",
+   458→   458→  title: "Build the supply chain of India with us",
+   459→   459→  body:
+   460→   460→    "We're 450+ supply-chain nerds, engineers and operators obsessed with moving things better. If you love solving hard, real-world problems at scale — you'll feel at home.",
+   461→   461→  perks: [
+   462→   462→    { icon: IndianRupee, title: "Market-leading pay", text: "Competitive compensation plus performance bonuses and ESOPs." },
+   463→   463→    { icon: BadgeCheck, title: "Learn & grow", text: "Sponsored certifications, internal mobility and a clear career track." },
+   464→   464→    { icon: Leaf, title: "Purpose-led work", text: "Build sustainable logistics that millions of Indians rely on." },
+   465→   465→    { icon: Users, title: "Inclusive culture", text: "Great Place to Work certified, with 38% women in operations." },
+   466→   466→  ],
+   467→   467→  openings: [
+   468→   468→    { role: "Senior WMS Engineer", team: "Technology", location: "Bengaluru", type: "Full-time" },
+   469→   469→    { role: "Warehouse Operations Manager", team: "Operations", location: "Bhiwandi, Mumbai", type: "Full-time" },
+   470→   470→    { role: "Supply Chain Consultant", team: "Consulting", location: "Delhi NCR", type: "Full-time" },
+   471→   471→    { role: "Cold Chain Specialist", team: "Pharma Vertical", location: "Hyderabad", type: "Full-time" },
+   472→   472→    { role: "Fleet & Transport Manager", team: "Transportation", location: "Chennai", type: "Full-time" },
+   473→   473→    { role: "Data Analyst — Control Tower", team: "Analytics", location: "Bengaluru", type: "Full-time" },
+   474→   474→  ],
+   475→   475→};
+   476→   476→
+   477→   477→/* ------------------------------------------------------------------ */
+   478→   478→/* INSIGHTS                                                            */
+   479→   479→/* ------------------------------------------------------------------ */
+   480→   480→export interface Insight {
+   481→   481→  category: string;
+   482→   482→  title: string;
+   483→   483→  excerpt: string;
+   484→   484→  date: string;
+   485→   485→  read: string;
+   486→   486→}
+   487→   487→
+   488→   488→export const INSIGHTS: Insight[] = [
+   489→   489→  {
+   490→   490→    category: "Strategy",
+   491→   491→    title: "Designing a Bharat-ready supply chain for quick-commerce",
+   492→   492→    excerpt: "Why hyperlocal fulfilment needs a fundamentally different network design — and how to fund it.",
+   493→   493→    date: "Mar 2025",
+   494→   494→    read: "6 min read",
+   495→   495→  },
+   496→   496→  {
+   497→   497→    category: "Technology",
+   498→   498→    title: "How AI is reshaping demand sensing in Indian retail",
+   499→   499→    excerpt: "From festival spikes to monsoon dips — ML models that forecast 4 weeks out at pin-code level.",
+   500→   500→    date: "Feb 2025",
+   501→   501→    read: "8 min read",
+   502→   502→  },
+   503→   503→  {
+   504→   504→    category: "Sustainability",
+   505→   505→    title: "The EV last-mile playbook for Indian 3PLs",
+   506→   506→    excerpt: "TCO economics, charging swaps and where EVs already beat diesel in 2025.",
+   507→   507→    date: "Jan 2025",
+   508→   508→    read: "5 min read",
+   509→   509→  },
+   510→   510→];
+   511→   511→
+   512→   512→/* ------------------------------------------------------------------ */
+   513→   513→/* FAQ                                                                 */
+   514→   514→/* ------------------------------------------------------------------ */
+   515→   515→export const FAQS = [
+   516→   516→  {
+   517→   517→    q: "What does 3PL mean and how is it different from contract logistics?",
+   518→   518→    a: "3PL (third-party logistics) covers outsourced services like warehousing and transportation. Contract logistics is a deeper, longer-term partnership where we design, run and optimise your end-to-end supply chain under committed SLAs — often with dedicated assets and shared KPIs.",
+   519→   519→  },
+   520→   520→  {
+   521→   521→    q: "How quickly can you go live in a new city?",
+   522→   522→    a: "For cities where we already have a hub, we can onboard inventory in 2–3 weeks. Greenfield dedicated facilities typically take 10–14 weeks depending on size, fit-out and integrations.",
+   523→   523→  },
+   524→   524→  {
+   525→   525→    q: "Do you handle temperature-sensitive and pharma shipments?",
+   526→   526→    a: "Yes. We operate GDP-compliant cold-chain storage at 2–8°C and –18°C with data loggers, validated routes and full audit trails — serving vaccines, formulations and hospital supplies.",
+   527→   527→  },
+   528→   528→  {
+   529→   529→    q: "Can you integrate with our ERP and marketplaces?",
+   530→   530→    a: "Absolutely. bTower ships with API and EDI connectors for SAP, Oracle, Shopify, Magento, Amazon, Flipkart and more. Custom integrations are typically delivered in 3–6 weeks.",
+   531→   531→  },
+   532→   532→  {
+   533→   533→    q: "What is your coverage in tier-2 and tier-3 India?",
+   534→   534→    a: "We serve 8,000+ pin codes directly through our own spoke network and curated last-mile partners, reaching every district in the country.",
+   535→   535→  },
+   536→   536→  {
+   537→   537→    q: "How do you price your services?",
+   538→   538→    a: "Most engagements are structured as a transparent cost-to-serve — per-pallet storage, per-order fulfilment, per-kg-km transport — with shared savings on continuous improvement. We share a detailed proposal after a 2-week diagnostic.",
+   539→   539→  },
+   540→   540→];
+   541→   541→
+   542→   542→/* ------------------------------------------------------------------ */
+   543→   543→/* CONTACT / OFFICES                                                   */
+   544→   544→/* ------------------------------------------------------------------ */
+   545→   545→export const OFFICES = [
+   546→   546→  {
+   547→   547→    city: "Bengaluru (HQ)",
+   548→   548→    address: "Tower B, Prestige Tech Park, Marathahalli–Sarjapur Ring Road, Bengaluru 560103",
+   549→   549→    phone: "+91 80 4567 8900",
+   550→   550→  },
+   551→   551→  { city: "Mumbai", address: "501, Lodha Supremus, Worli, Mumbai 400030", phone: "+91 22 4567 8900" },
+   552→   552→  { city: "Delhi NCR", address: "6th Floor, Cyber Hub, Gurugram 122002", phone: "+91 124 456 8900" },
+   553→   553→  { city: "Chennai", address: "TICEL BioPark, Taramani, Chennai 600113", phone: "+91 44 4567 8900" },
+   554→   554→];
+   555→   555→
+   556→   556→export const CONTACT_REASONS = [
+   557→   557→  "Request a proposal",
+   558→   558→  "Schedule a warehouse visit",
+   559→   559→  "Partner with us (carrier / vendor)",
+   560→   560→  "Media & press",
+   561→   561→  "Careers",
+   562→   562→  "General enquiry",
+   563→   563→];
+   564→   564→

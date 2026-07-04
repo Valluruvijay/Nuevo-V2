@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Enquiry {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String
+  phone     String?
+  company   String?
+  reason    String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model JobOpening {
+  id          String   @id @default(cuid())
+  role        String
+  team        String
+  location    String
+  type        String
+  experience  String
+  description String
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model JobApplication {
+  id         String   @id @default(cuid())
+  jobId      String
+  name       String
+  email      String
+  phone      String?
+  resumeLink String?
+  coverNote  String?
+  createdAt  DateTime @default(now())
+
+  @@index([jobId])
+  @@index([createdAt])
+}
